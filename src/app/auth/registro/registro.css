@@ -1,0 +1,131 @@
+/* Contenedor principal que centra la tarjeta */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #f0f2f5;
+  padding: 20px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Tarjeta de registro */
+.register-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.register-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #1c1e21;
+  font-weight: 700;
+}
+
+.register-subtitle {
+  text-align: center;
+  color: #606770;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Estilo de filas y etiquetas */
+.mb-3.row {
+  display: flex;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.col-form-label {
+  flex: 0 0 35%;
+  font-weight: 600;
+  color: #4b4f56;
+}
+
+.col-sm-8 {
+  flex: 0 0 65%;
+}
+
+/* Estilo de los campos de entrada */
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: #f5f6f7;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  background-color: #fff;
+  border-color: #1877f2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+}
+
+/* Checkbox de términos */
+.terms-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+  color: #606770;
+}
+
+/* Botón llamativo */
+.btn-register {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0d6efd; /* Verde éxito */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-register:hover {
+  background-color: #0d6efd;
+}
+
+/* Footer con enlace */
+.register-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  border-top: 1px solid #dadde1;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  color: #1877f2;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 576px) {
+  .mb-3.row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .col-form-label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .col-sm-8 {
+    width: 100%;
+  }
+}
