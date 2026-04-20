@@ -1,82 +1,83 @@
-/* Contenedor principal de la Navbar */
+/* Estilos Generales de la Navbar */
 .navbar {
-  padding: 0.8rem 2rem;
-  background: rgba(255, 255, 255, 0.9) !important; /* Fondo semi-transparente */
-  backdrop-filter: blur(10px); /* Efecto de desenfoque moderno */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff !important;
   transition: all 0.3s ease;
 }
 
-/* Estilo del Logo / Marca */
+/* Marca / Logo */
 .navbar-brand {
   font-weight: 700;
   color: #2c3e50 !important;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
 }
 
-/* Enlaces de navegación */
+/* Enlaces de Navegación */
 .nav-link {
-  color: #555 !important;
+  color: #546e7a !important;
   font-weight: 500;
-  margin: 0 5px;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-/* Línea animada bajo los enlaces al pasar el mouse */
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #198754; /* Color verde de Bootstrap success */
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #198754 !important;
+  color: #2ecc71 !important; /* Color verde al pasar el mouse */
+  transform: translateY(-1px);
 }
 
-/* Personalización del Dropdown */
+/* Enlace Activo */
+.nav-link.active {
+  color: #2ecc71 !important;
+  font-weight: 600;
+}
+
+/* Menú Desplegable (Dropdown) */
 .dropdown-menu {
   border: none;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  padding: 10px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem;
 }
 
 .dropdown-item {
   border-radius: 6px;
-  transition: background 0.2s ease;
-  padding: 8px 15px;
+  padding: 0.6rem 1rem;
+  transition: background-color 0.2s;
 }
 
 .dropdown-item:hover {
-  background-color: #f8f9fa;
-  color: #198754;
+  background-color: #f1f8e9;
+  color: #2ecc71;
 }
 
-/* Input de búsqueda */
-.form-control {
-  border-radius: 20px;
-  border: 1px solid #eee;
-  padding-left: 15px;
-}
 
-.form-control:focus {
-  box-shadow: 0 0 0 0.25 margin-rgba(25, 135, 84, 0.25);
-  border-color: #198754;
-}
-
-/* Botón de búsqueda redondeado */
 .btn-outline-success {
   border-radius: 20px;
-  padding: 5px 20px;
+  border-width: 2px;
+  font-weight: 600;
+  padding: 0.4rem 1.2rem;
+  color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.btn-outline-success:hover {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+/* Botón de Registro (Efecto de botón principal) */
+a[routerLink='/registro'] {
+  background-color: #2c3e50;
+  color: #ffffff !important;
+  border-radius: 20px;
+  margin-left: 10px;
+  padding: 0.5rem 1.2rem !important;
+  text-align: center;
+}
+
+a[routerLink='/registro']:hover {
+  background-color: #1a252f;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }

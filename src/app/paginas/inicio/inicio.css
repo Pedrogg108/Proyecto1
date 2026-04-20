@@ -1,0 +1,61 @@
+/* --- Estilización del Carrusel --- */
+
+#carouselExampleAutoplaying {
+    max-width: 1000px; /* Ancho máximo para que no se desborde en pantallas grandes */
+    margin: 2rem auto; /* Centra el carrusel y le da aire arriba/abajo */
+    border-radius: 20px;
+    overflow: hidden; /* Corta las esquinas de las imágenes para que sigan el radio */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra profunda para destacar las portadas */
+}
+
+.carousel-inner {
+    height: 500px; /* Altura fija para que el diseño no "salte" entre imágenes */
+    background-color: #000; /* Fondo negro por si una imagen no carga bien */
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover; /* Clave: ajusta la imagen al contenedor sin deformarla */
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto zoom suave al pasar el mouse */
+#carouselExampleAutoplaying:hover .carousel-item.active img {
+    transform: scale(1.05);
+}
+
+/* --- Personalización de Controles (Flechas) --- */
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%; /* Flechas más discretas */
+    opacity: 0; /* Ocultas por defecto */
+    transition: opacity 0.3s ease;
+}
+
+#carouselExampleAutoplaying:hover .carousel-control-prev,
+#carouselExampleAutoplaying:hover .carousel-control-next {
+    opacity: 1; /* Aparecen al poner el mouse sobre el carrusel */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo circular oscuro para las flechas */
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 50%;
+}
+
+/* --- Adaptación para Móviles --- */
+
+@media (max-width: 768px) {
+    .carousel-inner {
+        height: 300px; /* Más pequeño en celulares */
+    }
+    
+    #carouselExampleAutoplaying {
+        margin: 1rem;
+        border-radius: 12px;
+    }
+}
