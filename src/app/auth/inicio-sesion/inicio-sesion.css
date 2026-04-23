@@ -1,97 +1,90 @@
-/* Centrado total en la pantalla */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh; /* Ajusta según el tamaño de tu navbar */
-  background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Estilos generales para el contenedor del formulario */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Tarjeta del formulario */
-.login-card {
-  background: #ffffff;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 450px;
+/* Título */
+#titulo {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
-.login-title {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
-  font-weight: 600;
+/* Espaciado de los grupos de control */
+.mb-3 {
+    margin-bottom: 20px;
 }
 
-/* Reutilizando y mejorando tus clases de Bootstrap manuales */
-.mb-3.row {
-  display: flex;
-  margin-bottom: 1.5rem;
-  align-items: center;
+/* Etiquetas (Labels) */
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
 }
 
-.col-form-label {
-  flex: 0 0 25%;
-  font-weight: 500;
-  color: #555;
-}
-
-.col-sm-9 {
-  flex: 0 0 75%;
-}
-
+/* Inputs de texto y password */
 .form-control {
-  width: 100%;
-  padding: 0.6rem 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  transition: all 0.2s;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control:focus {
-  border-color: #0d6efd;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
 }
 
-.form-control-plaintext {
-  padding: 0.6rem 0;
-  border: none;
-  font-weight: 600;
-  color: #212529;
+/* Texto de ayuda (emailHelp) */
+.form-text {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
 }
 
-/* Botón estilizado */
-.btn-login {
-  width: 100%;
-  padding: 0.8rem;
-  background-color: #0d6efd;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
+/* Checkbox */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.btn-login:hover {
-  background-color: #0b5ed7;
+.form-check-input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 }
 
-.login-footer {
-  text-align: center;
-  margin-top: 1.5rem;
+/* Botón de Enviar */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.forgot-link {
-  font-size: 0.9rem;
-  color: #6c757d;
-  text-decoration: none;
+.btn-primary:hover {
+    background-color: #0b5ed7;
 }
 
-.forgot-link:hover {
-  text-decoration: underline;
+.btn-primary:active {
+    transform: scale(0.98);
 }

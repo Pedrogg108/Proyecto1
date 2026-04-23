@@ -27,12 +27,6 @@
   transform: translateY(-1px);
 }
 
-/* Enlace Activo */
-.nav-link.active {
-  color: #2ecc71 !important;
-  font-weight: 600;
-}
-
 /* Menú Desplegable (Dropdown) */
 .dropdown-menu {
   border: none;

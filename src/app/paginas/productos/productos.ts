@@ -13,11 +13,27 @@ export class Productos {
   constructor() {
     this.infoJuegos = [{
       id: 1,
-      nombre: "Samsung A06",
-      descripcion: "64GB/4GB Ram",
-      precio: 456000,
-      img: "../../../assets/DBZ.jpg",
+      nombre: "Dragon Ball Sparking zero",
+      descripcion: "juego",
+      precio: 70,
+      img: "../assets/DBZ.jpg",
       alt: "DBZ"
+    },
+    {
+      id: 2,
+      nombre: "Resident evil Requiem",
+      descripcion: "juego",
+      precio: 60,
+      img: "../assets/ReRequiem.jpg",
+      alt: "RERequiem"
+    },
+    {
+      id: 3,
+      nombre: "Monster Hunter World",
+      descripcion: "juego",
+      precio: 50,
+      img: "../assets/monsterHunterWorld.jpg",
+      alt: "MonsterHunterWorld"
     }
     ]
   }

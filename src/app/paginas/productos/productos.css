@@ -1,119 +1,254 @@
+#titulo {
+  text-align: center;
+  margin: 40px 0 40px;
+}
+
+/* =====================================================
+   ====== CONTENEDOR ======
+===================================================== */
 .container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem 1rem;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  color: #333;
+/* =====================================================
+   ====== FILA DE TARJETAS ======
+===================================================== */
+.row {
+  display: flex;
+  justify-content: center;
 }
 
-/* Sistema de Grid Responsivo */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
 
-/* Tarjeta de Producto */
-.product-card {
-  background: #fff;
+/* =====================================================
+   ====== TARJETA ======
+===================================================== */
+.p-6 {
+  background-color: #fff;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  flex: 1 1 30%; /* Ocupa aproximadamente 1/3 de la fila */
+  max-width: 350px;/*ancho maximo*/
+  padding: 1.5rem;/*24px*/
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;/*Movimiento y sobra suave*/
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+.p-6:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0);/*0 → No se mueve horizontalmente, 6px → Se mueve 6px hacia abajo, 20px → Desenfoque (cuán difusa es la sombra).*/
 }
 
-/* Imagen y Badges */
-.product-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
+/* =====================================================
+   ====== IMAGEN DE LA TARJETA ======
+===================================================== */
+.card-image-top {
+  width: 100%;/*ocupa todo el ancho de la tarjeta*/
+  height: 220px;/*mantiene una altura uniforme entre imágenes*/
+  object-fit: contain; /* Asegura que la imagen no se deforme */
+  margin-bottom: 15px;
 }
 
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/*texto*/
+.card-text {
+  color: #4d4d4d;
 }
 
-.badge-discount, .badge-new {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 5px 10px;
+/* =====================================================
+   ====== BOTÓN ======
+===================================================== */
+.btn-action {
+  background-color: #0066ff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.btn-action:hover {
+  background-color: #004ecc;
+}
+
+/* =====================================================
+   ====== RESPONSIVE (pantallas medianas y chicas) ======
+===================================================== */
+
+/* --- Tablets (menor a 992px) --- */
+@media (max-width: 992px) {
+  .row {
+    flex-wrap: wrap; /* Las tarjetas se acomodan una debajo de otra */
+    justify-content: space-around;
+  }
+
+  #titulo {
+    font-size: 2.2rem;
+  }
+
+}
+
+/* --- Móviles (menor a 600px) --- */
+@media (max-width: 600px) {
+  #titulo {
+    font-size: 1.8rem;
+  }
+
+  .p-6 {
+    flex: 1 1 100%; /* Una tarjeta por fila */
+    max-width: 90%;
+  }
+}
+
+/* =====================================================
+   ====== ESTILOS DEL CARRUSEL ======
+===================================================== */
+#carouselExampleCaptions {
+  margin: 40px;
+  border-radius: 10px;
+  overflow: hidden; /* Evita que sobresalgan las imágenes */
+}
+
+/* --- Imágenes del carrusel --- */
+#carouselExampleCaptions img {
+  background-color: white;
+  height: 500px; /* Altura fija para pantallas grandes */
+  object-fit: cover; /* Recorta la imagen sin deformarla */
+}
+.carousel-indicators .active {
+  background-color: #ff6600;
+}
+
+/* --- Controles (flechas) --- */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* --- Texto sobre las imágenes --- */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #fff;
-  font-size: 0.8rem;
-  font-weight: bold;
 }
 
-.badge-discount { background-color: #e74c3c; }
-.badge-new { background-color: #2ecc71; }
-
-/* Información del Producto */
-.product-info {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.product-name {
-  font-size: 1.25rem;
-  margin: 0 0 10px 0;
-  color: #222;
-}
-
-.product-description {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 15px;
-  line-height: 1.4;
-}
-
-.product-price {
-  margin-top: auto;
-  margin-bottom: 15px;
-}
-
-.price-current {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #0d6efd;
-}
-
-.price-old {
+.carousel-caption p {
   font-size: 1rem;
-  color: #999;
-  text-decoration: line-through;
-  margin-left: 10px;
+  color: #ddd;
 }
 
-/* Botón */
-.btn-add-cart {
-  width: 100%;
-  padding: 12px;
-  background-color: #333;
+/* =====================================================
+   ====== CARRUSEL RESPONSIVE ======
+===================================================== */
+@media (max-width: 768px) {
+  #carouselExampleCaptions {
+    max-width: 95%;
+  }
+
+  #carouselExampleCaptions img {
+    height: 250px; /* Altura más baja en pantallas pequeñas */
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}
+/* =====================================================
+   ====== ESTILOS DEL MODAL ======
+===================================================== */
+
+/* Contenedor principal del modal */
+.modal-content {
+  border-radius: 15px;
+  overflow: hidden; /* Evita que la imagen se desborde */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+}
+
+/* Encabezado del modal */
+.modal-header {
+  background-color: #0066ff;
   color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
 }
 
-.btn-add-cart:hover {
-  background-color: #0d6efd;
+.modal-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* Cuerpo del modal */
+.modal-body {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Imagen dentro del modal */
+.img-modal {
+  margin: 0 auto 1rem auto; /* Centrada */
+  width: 50%;
+  max-width: 450px; /* Tamaño máximo en pantallas grandes */
+  height: auto; /* Mantiene la proporción original */
+  object-fit: contain; /* Evita deformación */
+  border-radius: 10px;
+}
+
+/* Texto y descripción */
+
+
+.modal-precio {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #0066ff;
+  margin-bottom: 0.5rem;
+}
+
+/* Pie del modal */
+.modal-footer {
+  justify-content: center;
+}
+
+/* =====================================================
+   ====== MODAL RESPONSIVE ======
+===================================================== */
+
+@media (max-width: 992px) {
+  .img-modal {
+    max-width: 350px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+
+  .modal-body {
+    padding: 1.2rem;
+  }
+
+  .img-modal {
+    max-width: 100%; /* Usa todo el ancho disponible */
+    height: auto;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+  }
+
+  .modal-descripcion {
+    font-size: 0.95rem;
+  }
+
+  .modal-precio {
+    font-size: 1.1rem;
+  }
 }
