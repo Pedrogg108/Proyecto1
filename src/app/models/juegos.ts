@@ -3,6 +3,8 @@ export interface Juegos {
     nombre:string;
     descripcion:string;
     precio:number;
+    genero:string;
+    disponibilidad:boolean;
     img?:string;
     alt?:string;
 
