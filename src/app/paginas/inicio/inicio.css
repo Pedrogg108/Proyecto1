@@ -1,6 +1,15 @@
 /* --- Estilización del Carrusel --- */
-
+.fondo{
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #52796f;
+    display: flex;
+    align-items: center;
+    
+}
 #carouselExampleAutoplaying {
+    
     max-width: 1000px; /* Ancho máximo para que no se desborde en pantallas grandes */
     margin: 2rem auto; /* Centra el carrusel y le da aire arriba/abajo */
     border-radius: 20px;

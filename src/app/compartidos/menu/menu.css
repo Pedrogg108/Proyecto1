@@ -2,21 +2,21 @@
 .navbar {
   padding: 0.8rem 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  background-color: #ffffff !important;
+  background-color: #354f52 !important;
   transition: all 0.3s ease;
 }
 
 /* Marca / Logo */
 .navbar-brand {
   font-weight: 700;
-  color: #2c3e50 !important;
+  color: #cad2c5 !important;
   font-size: 1.4rem;
   letter-spacing: -0.5px;
 }
 
 /* Enlaces de Navegación */
 .nav-link {
-  color: #546e7a !important;
+  color: #cad2c5 !important;
   font-weight: 500;
   padding: 0.5rem 1rem !important;
   transition: color 0.3s ease, transform 0.2s ease;

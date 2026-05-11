@@ -9,14 +9,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './productos.css',
 })
 export class Productos {
-  Productos:Juegos[]=[
+  Productos: Juegos[] = [
     {
       id: 1,
       nombre: "Dragon Ball Sparking Zero",
       descripcion: "juego",
       precio: 70,
-      genero:"Pelea",
-      disponibilidad:true,
+      genero: "Pelea",
+      disponibilidad: true,
+      oferta: false,
       img: "../assets/DBZ.jpg",
       alt: "DBZ"
     },
@@ -25,8 +26,9 @@ export class Productos {
       nombre: "Resident evil Requiem",
       descripcion: "juego",
       precio: 60,
-      genero:"Terror",
-      disponibilidad:true,
+      genero: "Terror",
+      disponibilidad: true,
+      oferta: false,
       img: "../assets/ReRequiem.jpg",
       alt: "RERequiem"
     },
@@ -35,8 +37,9 @@ export class Productos {
       nombre: "Monster Hunter World",
       descripcion: "juego",
       precio: 50,
-      genero:"Accion",
-      disponibilidad:true,
+      genero: "Accion",
+      disponibilidad: true,
+      oferta: false,
       img: "../assets/monsterHunterWorld.jpg",
       alt: "MonsterHunterWorld"
     },
@@ -45,8 +48,9 @@ export class Productos {
       nombre: "Silent Hill 2 Remake",
       descripcion: "juego",
       precio: 16.50,
-      genero:"Terror",
-      disponibilidad:true,
+      genero: "Terror",
+      disponibilidad: true,
+      oferta: false,
       img: "../assets/silentHill2.jpg",
       alt: "Silent Hill 2 remake"
     },
@@ -55,8 +59,9 @@ export class Productos {
       nombre: "Expedition 33",
       descripcion: "juego",
       precio: 67,
-      genero:"Accion",
-      disponibilidad:false,
+      genero: "Accion",
+      disponibilidad: true,
+      oferta: false,
       img: "../assets/expedition.jpg",
       alt: "Expedition33"
     },
@@ -65,16 +70,15 @@ export class Productos {
       nombre: "Forza Horizon 6",
       descripcion: "juego",
       precio: 39,
-      genero:"Carrera",
-      disponibilidad:false,
+      genero: "Carrera",
+      disponibilidad: false,
+      oferta: true,
       img: "../assets/forzahorizon6.jpg",
       alt: "Forza horizon 6"
-    },
-    
-    
+    }
   ]
-}
 
+}
 
 //   public infoJuegos: Juegos[];
 //   constructor() {

@@ -17,7 +17,7 @@
         </div>
     </div>
 </div> -->
-<div class="container">
+<div class="fondo">
     @for (p of Productos ; track p.id){
     @if(p.disponibilidad){
     <div class="card" style="width: 18rem;">
@@ -26,11 +26,12 @@
             <div class="card-body">
                 <h5 class="card-title">{{ p.nombre }}</h5>
                 <p class="card-text">{{ p.descripcion }}</p>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal">Comprar </button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal">Ver mas</button>
 
             </div>
         </div>
     </div>
     }
     }
+
 </div>

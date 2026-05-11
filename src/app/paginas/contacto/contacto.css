@@ -1,71 +1,97 @@
-/* Estilos generales para el formulario */
+/* Estilos generales para el contenedor del formulario */
+.fondo {
+    min-height: 100vh; /* Cambiado a 100vh para asegurar que cubra toda la pantalla */
+    margin: 0;
+    padding: 40px 20px; /* Más padding arriba y abajo para que no toque los bordes del navegador */
+    background-color: #52796f;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    box-sizing: border-box;
+}
+
 form {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
+    /* Aumentamos el ancho máximo para que los inputs no se vean tan comprimidos */
+    width: 100%;
+    max-width: 500px; 
+    
+    /* Quitamos el margin: 50px auto; ya que el Flexbox del padre (.fondo) se encarga del centrado */
+    padding: 40px; /* Aumentamos el padding interno de 30px a 40px */
     background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 16px; /* Bordes un poco más suaves */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Estilo del título */
+/* Título */
 #titulo {
     text-align: center;
-    color: #333;
-    margin-bottom: 1.5rem;
+    color: #2f3e46; /* Un tono más oscuro del verde de fondo para armonizar */
+    margin-bottom: 35px; /* Más espacio después del título */
+    font-size: 28px;
     font-weight: 700;
+}
+
+/* Espaciado de los grupos de control */
+.mb-3 {
+    margin-bottom: 25px; /* Aumentamos la separación entre campos de 20px a 25px */
 }
 
 /* Etiquetas (Labels) */
 .form-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #354f52; /* Color más legible */
     font-weight: 600;
-    color: #495057;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
 }
 
-/* Estilo de los inputs, select y textarea */
-.form-control, .form-select {
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
-    padding: 0.75rem;
+/* Inputs de texto y password */
+.form-control {
+    width: 100%;
+    padding: 14px 18px; /* Un poco más de altura para que el texto respire */
+    border: 1.5px solid #cad2c5; /* Borde sutil basado en la paleta de verdes */
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-/* Efecto al hacer clic en los campos (Focus) */
-.form-control:focus, .form-select:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.25 shadow rgba(13, 110, 253, 0.15);
+.form-control:focus {
     outline: none;
+    border-color: #52796f; /* El foco ahora hace juego con el fondo */
+    box-shadow: 0 0 0 4px rgba(82, 121, 111, 0.1);
 }
 
-/* Ajuste específico para el área de texto */
+/* Checkbox */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 30px; /* Separamos el checkbox del botón de registro */
+}
 textarea.form-control {
-    min-height: 120px;
-    resize:unset
-}
 
-/* Estilo del botón enviar */
+    min-height: 120px;
+
+    resize:unset
+
+}
+/* Botón de Enviar */
 .btn-primary {
     width: 100%;
-    padding: 0.8rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    background-color: #0d6efd;
+    padding: 15px; /* Botón más robusto y fácil de clickear */
+    background-color: #2f3e46; /* Cambiamos el azul por un tono oscuro que combina con el fondo */
+    color: white;
     border: none;
-    transition: background-color 0.3s transform 0.2s ease;
-    margin-top: 1rem;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-/* Efecto hover en el botón */
 .btn-primary:hover {
-    background-color: #0b5ed7;
-    transform: translateY(-2px);
-}
-
-/* Texto de ayuda debajo del email */
-.form-text {
-    font-size: 0.85rem;
-    color: #6c757d;
-    margin-top: 0.4rem;
+    background-color: #354f52;
 }

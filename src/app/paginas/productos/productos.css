@@ -1,6 +1,7 @@
 /* Configuración General */
 body {
-    background-color: #0f172a; /* Azul muy oscuro */
+    background-color: #0f172a;
+    /* Azul muy oscuro */
     color: #f8fafc;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
@@ -11,18 +12,30 @@ body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #38bdf8; /* Celeste neón */
+    color: #38bdf8;
+    /* Celeste neón */
     text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
     margin-bottom: 40px;
 }
 
 /* Contenedor de las Tarjetas (Grid) */
-.container {
+/* .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
     justify-items: center;
     padding: 20px;
+} */
+
+.fondo {
+    padding: 20px;
+    gap: 25px;
+    background-color: #52796f;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    align-items: center;
+    justify-items: center;
+
 }
 
 /* Estilo de la Tarjeta */
@@ -46,7 +59,8 @@ body {
 .card-image-top {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
     border-bottom: 2px solid #334155;
 }
 
@@ -83,7 +97,8 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     transition: background 0.2s ease;
-    margin-top: auto; /* Empuja el botón al fondo si hay poco texto */
+    margin-top: auto;
+    /* Empuja el botón al fondo si hay poco texto */
 }
 
 .btn-action:hover {

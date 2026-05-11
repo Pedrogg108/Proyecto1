@@ -1,90 +1,104 @@
-/* Estilos generales para el contenedor del formulario */
-form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Contenedor principal */
+.fondo {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    background-color: #52796f;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Título */
+form {
+    width: 100%;
+    /* Aumentamos el ancho máximo de 400px a 450px o 500px */
+    max-width: 480px; 
+    
+    /* Aumentamos mucho el padding para que el contenido no esté pegado a los bordes */
+    padding: 3rem; 
+    
+    background-color: #ffffff;
+    border-radius: 20px; /* Bordes más redondeados para un look moderno */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Título más grande */
 #titulo {
     text-align: center;
+    font-size: 2rem; /* Tamaño de fuente mayor */
+    font-weight: 700;
     color: #333;
-    margin-bottom: 25px;
-    font-size: 24px;
-    font-weight: 600;
+    margin-bottom: 2.5rem;
 }
 
-/* Espaciado de los grupos de control */
+/* Espaciado entre bloques */
 .mb-3 {
-    margin-bottom: 20px;
+    margin-bottom: 1.8rem;
 }
 
-/* Etiquetas (Labels) */
+/* Etiquetas más legibles */
 .form-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.8rem;
 }
 
-/* Inputs de texto y password */
+/* Inputs más altos y con letra más grande */
 .form-control {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem; /* Más espacio para escribir */
+    font-size: 1.05rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
 .form-control:focus {
+    border-color: #52796f;
+    box-shadow: 0 0 0 4px rgba(82, 121, 111, 0.2);
     outline: none;
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
 }
 
-/* Texto de ayuda (emailHelp) */
-.form-text {
-    font-size: 12px;
-    color: #777;
-    margin-top: 5px;
-}
-
-/* Checkbox */
+/* Checkbox y su etiqueta */
 .form-check {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 2rem;
 }
 
 .form-check-input {
-    width: 16px;
-    height: 16px;
+    width: 20px; /* Checkbox más grande */
+    height: 20px;
     cursor: pointer;
 }
 
-/* Botón de Enviar */
+.form-check-label {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Botón grande y llamativo */
 .btn-primary {
     width: 100%;
-    padding: 12px;
-    background-color: #0d6efd;
+    padding: 1rem;
+    font-size: 1.2rem; /* Letra grande */
+    font-weight: 700;
+    text-transform: uppercase; /* Estilo profesional */
+    letter-spacing: 1px;
     color: white;
+    background-color: #2f3e46; /* Color oscuro elegante */
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #0b5ed7;
-}
-
-.btn-primary:active {
-    transform: scale(0.98);
+    background-color: #354f52;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
