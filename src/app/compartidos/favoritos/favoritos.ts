@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { Producto } from '../../servicios/producto';
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-favoritos',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './favoritos.html',
   styleUrl: './favoritos.css',
 })
-export class Favoritos {}
+export class Favoritos {
+  svc = inject(Producto)
+  favoritos = this.svc.favoritos;
+
+}

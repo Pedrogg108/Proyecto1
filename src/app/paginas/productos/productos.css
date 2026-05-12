@@ -1,11 +1,4 @@
-/* Configuración General */
-body {
-    background-color: #0f172a;
-    /* Azul muy oscuro */
-    color: #f8fafc;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
-}
+
 
 /* Título Principal */
 #titulo {
@@ -13,9 +6,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 4px;
     color: #38bdf8;
+    background-color: #52796f;
     /* Celeste neón */
     text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
     margin-bottom: 40px;
+    margin: 0px;
+    padding-top: 15px;
 }
 
 /* Contenedor de las Tarjetas (Grid) */
