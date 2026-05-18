@@ -19,7 +19,7 @@
 <h1 id="titulo">VideoJuegos</h1>
 <div class="fondo">
 
-    @for (p of listaProd() ; track p.id){
+    @for (p of Productos ; track p.id){
     @if(p.disponibilidad){
     <div class="card" style="width: 18rem;">
         <div class="p-6">
@@ -28,8 +28,8 @@
                 <h5 class="card-title">{{ p.nombre }}</h5>
                 <p class="card-text">${{ p.precio }}</p>
                 <button type="button" class="btn btn-action" data-bs-toggle="modal">Ver mas</button>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="metodoAgregarAFavoritos(p)">Favorito</button>
-
+                <button type="button" class="btn btn-action" data-bs-toggle="modal">Favorito</button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal">Agregar al carrito</button>
             </div>
         </div>
     </div>

@@ -1,19 +1,6 @@
 <h1 id="titulo">Favoritos</h1>
 <div class="fondo">
 
-    @for (p of favoritos() ; track p.id){
-    <div class="card" style="width: 18rem;">
-        <div class="p-6">
-            <img src="{{ p.img }}" class="card-image-top" alt="{{ p.alt }}">
-            <div class="card-body">
-                <h5 class="card-title">{{ p.nombre }}</h5>
-                <p class="card-text">${{ p.precio }}</p>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal">Ver mas</button>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal">Quitar de favoritos</button>
-
-            </div>
-        </div>
-    </div>
-    }
+    
 
 </div>
