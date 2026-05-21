@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CarritoService } from '../../servicios/carrito-service';
+import { Juegos } from '../../models/juegos';
 
 @Component({
   selector: 'app-carrito',
@@ -7,4 +9,10 @@ import { RouterLink } from '@angular/router';
   templateUrl: './carrito.html',
   styleUrl: './carrito.css',
 })
-export class Carrito {}
+export class Carrito implements OnInit {
+  juegosEnCarrito: Juegos[] = [];
+  constructor(private carritoServicio: CarritoService) { }
+  ngOnInit() {
+    this.juegosEnCarrito = this.carritoServicio.obtenerJuego();
+  }
+}

@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Juegos } from '../../models/juegos';
 import { CommonModule } from '@angular/common';
+import { CarritoService } from '../../servicios/carrito-service';
 
 @Component({
   selector: 'app-productos',
@@ -8,9 +9,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './productos.html',
   styleUrl: './productos.css',
 })
+
 export class Productos {
-
-
+  constructor(private carritoServicio: CarritoService) {}
   // metodoAgregarAFavoritos(juego: Juegos) {
   //   this.svc.agregarFavorito(juego);
   // }
@@ -83,6 +84,9 @@ export class Productos {
       alt: "Forza horizon 6"
     }
   ]
+  agregarAcarrito(l:Juegos){
+    this.carritoServicio.agregarJuego(l);
+  }
 
 }
 

@@ -29,7 +29,7 @@
                 <p class="card-text">${{ p.precio }}</p>
                 <button type="button" class="btn btn-action" data-bs-toggle="modal">Ver mas</button>
                 <button type="button" class="btn btn-action" data-bs-toggle="modal">Favorito</button>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal">Agregar al carrito</button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarAcarrito(p)">Agregar al carrito</button>
             </div>
         </div>
     </div>

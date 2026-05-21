@@ -2,23 +2,28 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">.</th>
-            <th scope="col">..</th>
-            <th scope="col">...</th>
-            <th scope="col">....</th>
-            <th scope="col">.....</th>
+            <th scope="col">Juegos en carrito</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Agregar</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Precio</th>
         </tr>
     </thead>
     <tbody>
+        @for (p of juegosEnCarrito ; track p.id){
+        @if(p.disponibilidad){
         <tr>
             <th scope="row">1</th>
-            <td>Nombre</td>
-            <td>Cantidad</td>
+            <td>{{ p.nombre }}</td>
+            <td>cantidad</td>
             <td><button>+</button></td>
             <td><button>-</button></td>
-            <td>$29.99</td>
+            <td>${{ p.precio }}</td>
         </tr>
+
+        }}
+
     </tbody>
     <tfoot>
         <tr>
