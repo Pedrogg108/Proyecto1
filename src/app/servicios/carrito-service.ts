@@ -1,6 +1,6 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Juegos } from '../models/juegos';
-import { Productos } from '../paginas/productos/productos';
+
 
 @Injectable({
   providedIn: 'root',
@@ -11,17 +11,34 @@ export class CarritoService {
 
   // ])
   agregarJuego(p: Juegos) {
-    this.carrito.push(p);
+    const juegoExistente = this.carrito.find(juego => juego.id === p.id);
+    if (juegoExistente) {
+      juegoExistente.cantidad++;
+
+    }
+    else {
+      this.carrito.push({...p, cantidad: 1});
+    }
   }
 
-  obtenerJuego(){
+  obtenerJuego() {
     return this.carrito;
   }
-  aumentarJuego(id: number){
-    const juego=this.carrito.find(p=>p.id===id);
-    if(juego){
-      juego
+  aumentarJuego(id: number) {
+    const juego = this.carrito.find(p => p.id === id);
+    if (juego) {
+      juego.cantidad++
       //lectura va en la interface
     }
   }
+  disminuirCantidad(id: number) {
+    const juego = this.carrito.find(p => p.id === id);
+    if (juego && juego.cantidad > 1) {
+      juego.cantidad--;
+    }
+  }
+  eliminarJuego(id: number) {
+    this.carrito = this.carrito.filter(p => p.id !== id);
+  }
+  
 }
