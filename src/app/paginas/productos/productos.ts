@@ -1,8 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Juegos } from '../../models/juegos';
 import { CommonModule } from '@angular/common';
 import { CarritoService } from '../../servicios/carrito-service';
-
+import { FavoritoServicio } from '../../servicios/favorito-servicio';
 @Component({
   selector: 'app-productos',
   imports: [CommonModule],
@@ -11,7 +11,7 @@ import { CarritoService } from '../../servicios/carrito-service';
 })
 
 export class Productos {
-  constructor(private carritoServicio: CarritoService) {}
+  constructor(private carritoServicio: CarritoService, private favoritoServicio: FavoritoServicio) {}
   // metodoAgregarAFavoritos(juego: Juegos) {
   //   this.svc.agregarFavorito(juego);
   // }
@@ -25,6 +25,7 @@ export class Productos {
       genero: "Pelea",
       disponibilidad: true,
       oferta: false,
+      cantidad: 1,
       img: "../assets/DBZ.jpg",
       alt: "DBZ"
     },
@@ -36,6 +37,7 @@ export class Productos {
       genero: "Terror",
       disponibilidad: true,
       oferta: false,
+      cantidad: 1,
       img: "../assets/ReRequiem.jpg",
       alt: "RERequiem"
     },
@@ -47,6 +49,7 @@ export class Productos {
       genero: "Accion",
       disponibilidad: true,
       oferta: false,
+      cantidad: 1,
       img: "../assets/monsterHunterWorld.jpg",
       alt: "MonsterHunterWorld"
     },
@@ -58,6 +61,7 @@ export class Productos {
       genero: "Terror",
       disponibilidad: true,
       oferta: false,
+      cantidad: 1,
       img: "../assets/silentHill2.jpg",
       alt: "Silent Hill 2 remake"
     },
@@ -69,6 +73,7 @@ export class Productos {
       genero: "Accion",
       disponibilidad: true,
       oferta: false,
+      cantidad: 1,
       img: "../assets/expedition.jpg",
       alt: "Expedition33"
     },
@@ -80,14 +85,17 @@ export class Productos {
       genero: "Carrera",
       disponibilidad: false,
       oferta: true,
+      cantidad: 1,
       img: "../assets/forzahorizon6.jpg",
       alt: "Forza horizon 6"
     }
   ]
-  agregarAcarrito(l:Juegos){
-    this.carritoServicio.agregarJuego(l);
+  agregarAcarrito(p:Juegos){
+    this.carritoServicio.agregarJuego(p);
   }
-
+  agregarFavoritos(p:Juegos){
+    this.favoritoServicio.agregarJuego(p);
+  }
 }
 
 //   public infoJuegos: Juegos[];

@@ -1,0 +1,175 @@
+/* --- Contenedor Responsivo para la Tabla --- */
+.table-responsive {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid #e1e8ed;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* --- Estilo Base de la Tabla --- */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #2c3e50;
+}
+
+/* Encabezados con fondo sutil */
+.table thead th {
+    background-color: #f8f9fa;
+    color: #7f8c8d;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #edf2f7;
+}
+
+/* Celdas del Cuerpo */
+.table td {
+    padding: 16px 20px;
+    vertical-align: middle;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f1f2f6;
+}
+
+/* Nombre del juego destacado */
+.table tbody tr td:first-child {
+    font-weight: 600;
+    color: #1a252f;
+}
+
+/* Efecto hover suave en las filas */
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+.table tbody tr:hover {
+    background-color: #fdfdfd;
+}
+
+/* --- Alineaciones de columnas --- */
+.table th:nth-child(2), .table td:nth-child(2), /* Cantidad */
+.table th:nth-child(6), .table td:nth-child(6)  /* Precio */ {
+    text-align: right;
+}
+
+.table td:nth-child(3), 
+.table td:nth-child(4), 
+.table td:nth-child(5) {
+    text-align: center; /* Centrar botones de control */
+}
+
+/* --- Botones del Carrito (+ , - , X) --- */
+.table td button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Botón Agregar (+) */
+.table td:nth-child(3) button {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+.table td:nth-child(3) button:hover {
+    background-color: #2e7d32;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Botón Disminuir (-) */
+.table td:nth-child(4) button {
+    background-color: #fff8e1;
+    color: #f57f17;
+}
+.table td:nth-child(4) button:hover {
+    background-color: #f57f17;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Botón Eliminar del carrito (X) */
+.table td:nth-child(5) button {
+    background-color: #ffebee;
+    color: #c62828;
+    font-size: 0.8rem;
+}
+.table td:nth-child(5) button:hover {
+    background-color: #c62828;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+
+/* ==========================================
+   NUEVA SECCIÓN: Tarjeta Finalizar Compra
+   ========================================== */
+.finalizar {
+    margin-top: 30px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between; /* Alinea el total a la izquierda y el botón a la derecha */
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+}
+
+/* Estilo del texto del Total */
+.finalizar h2 {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Botón Finalizar Compra Principal */
+.finalizar .btn-action {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); /* Azul eléctrico degradado */
+    color: #ffffff;
+    border: none;
+    padding: 14px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+.finalizar .btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+    filter: brightness(1.1);
+}
+
+.finalizar .btn-action:active {
+    transform: translateY(1px);
+}
+
+/* --- Adaptación para Pantallas Celulares --- */
+@media (max-width: 600px) {
+    .finalizar {
+        flex-direction: column; /* Apila el total arriba y el botón abajo */
+        gap: 16px;
+        text-align: center;
+    }
+    .finalizar .btn-action {
+        width: 100%; /* Botón ancho completo en móviles */
+    }
+}

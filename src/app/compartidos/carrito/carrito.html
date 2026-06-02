@@ -1,34 +1,34 @@
-<p>carrito works!</p>
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th scope="col">Juegos en carrito</th>
             <th scope="col">Nombre</th>
             <th scope="col">Cantidad</th>
+            <th scope="col">Precio unitario</th>
             <th scope="col">Agregar</th>
             <th scope="col">Eliminar</th>
-            <th scope="col">Precio</th>
+            <th scope="col">Eliminar del carrito</th>
+            <th scope="col">Subtotal</th>
         </tr>
     </thead>
     <tbody>
         @for (p of juegosEnCarrito ; track p.id){
         @if(p.disponibilidad){
         <tr>
-            <th scope="row">1</th>
             <td>{{ p.nombre }}</td>
-            <td>cantidad</td>
-            <td><button>+</button></td>
-            <td><button>-</button></td>
+            <td>{{ p.cantidad }}</td>
             <td>${{ p.precio }}</td>
+            <td><button (click)="aumentarCantidad(p.id)">+</button></td>
+            <td><button (click)="disminuirCantidad(p.id)">-</button></td>
+            <td><button (click)="eliminarJuego(p.id)">X</button></td>
+            <td>${{p.precio * p.cantidad}}</td>
         </tr>
 
         }}
 
     </tbody>
-    <tfoot>
-        <tr>
-            <th scope="row" colspan="5">Total</th>
-            <th scope="col">$29.99</th>
-        </tr>
-    </tfoot>
+
 </table>
+<div class="finalizar">
+    <h2>Total: ${{total}}</h2>
+    <button class="btn btn-action">Finalizar compra</button>
+</div>

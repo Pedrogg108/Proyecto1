@@ -28,7 +28,7 @@
                 <h5 class="card-title">{{ p.nombre }}</h5>
                 <p class="card-text">${{ p.precio }}</p>
                 <button type="button" class="btn btn-action" data-bs-toggle="modal">Ver mas</button>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal">Favorito</button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarFavoritos(p)">Favorito</button>
                 <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarAcarrito(p)">Agregar al carrito</button>
             </div>
         </div>

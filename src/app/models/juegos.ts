@@ -5,8 +5,10 @@ export interface Juegos {
     precio:number;
     genero:string;
     disponibilidad:boolean;
-    oferta:boolean;
+    oferta?:boolean;
+    cantidad:number;
     img?:string;
     alt?:string;
+    total?:number;
 
 }
