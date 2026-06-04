@@ -1,8 +1,12 @@
 <h1 id="titulo">Favoritos</h1>
-<div class="fondo">
 
+@if(juegosEnFavorito.length == 0){
+<div class="text">
+    <h2>No tienes juegos en favoritos</h2>
+</div>
+}@else{
+<div class="fondo">
     @for (p of juegosEnFavorito ; track p.id){
-    @if(p.disponibilidad){
     <div class="card" style="width: 18rem;">
         <div class="p-6">
             <img src="{{ p.img }}" class="card-image-top" alt="{{ p.alt }}">
@@ -10,12 +14,15 @@
                 <h5 class="card-title">{{ p.nombre }}</h5>
                 <p class="card-text">${{ p.precio }}</p>
                 <button type="button" class="btn btn-action" data-bs-toggle="modal">Ver mas</button>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="eliminar(p.id)">Quitar de favoritos</button>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarAcarrito(p)" >Agregar al carrito</button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="eliminar(p.id)">Quitar de
+                    favoritos</button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarAcarrito(p)">Agregar
+                    al carrito</button>
             </div>
         </div>
+
+
     </div>
     }
-    }
-
 </div>
+}

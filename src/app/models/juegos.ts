@@ -9,6 +9,5 @@ export interface Juegos {
     cantidad:number;
     img?:string;
     alt?:string;
-    total?:number;
-
+ // te estas portando mal seras castigada, te dare en el cuarto hasta la madrugada, si esa cola no tiene dueño
 }

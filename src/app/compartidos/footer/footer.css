@@ -1,4 +1,4 @@
-/* Estilos generales del Footer */
+
 footer {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -6,24 +6,24 @@ footer {
     font-family: sans-serif;
 }
 
-/* Contenedor principal con Flexbox */
+
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap; /* Para que en móvil las columnas bajen */
+    flex-wrap: wrap; 
     justify-content: space-between;
     gap: 40px;
 }
 
-/* Estilo de cada columna */
+
 .footer-section {
     flex: 1;
-    min-width: 250px; /* Evita que las columnas sean muy angostas */
+    min-width: 250px; 
 }
 
 .footer-section h3 {
-    color: #00d1b2; /* Color de acento */
+    color: #00d1b2; 
     margin-bottom: 20px;
     font-size: 1.2rem;
 }
@@ -34,7 +34,7 @@ footer {
     font-size: 14px;
 }
 
-/* Estilos de la lista de enlaces */
+
 .footer-section ul {
     list-style: none;
     padding: 0;
@@ -55,7 +55,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Línea final de Copyright */
+
 .footer-bottom {
     text-align: center;
     margin-top: 50px;
@@ -65,7 +65,7 @@ footer {
     font-size: 13px;
 }
 
-/* Ajuste para pantallas pequeñas */
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
