@@ -3,13 +3,20 @@
     min-height: 100vh; /* Cambiado a 100vh para asegurar que cubra toda la pantalla */
     margin: 0;
     padding: 40px 20px; /* Más padding arriba y abajo para que no toque los bordes del navegador */
-    background-color: #52796f;
-    display: flex;
-    align-items: center; 
+    background-color: #3d4e5a;
+    
     justify-content: center; 
     box-sizing: border-box;
+    justify-items: center;
 }
+iframe{
+   display: flex;
+   margin-top: 50px;  /* baja poco */
+   height: 500px;
+   width: 500px;
+   border-radius: 50px;
 
+}
 form {
     /* Aumentamos el ancho máximo para que los inputs no se vean tan comprimidos */
     width: 100%;

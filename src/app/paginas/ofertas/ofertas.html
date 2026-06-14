@@ -1,1 +1,28 @@
-<h1 id="titulo">¡Ofertas!</h1>
+<h1 id="titulo">Ofertas</h1>
+<div class="fondo">
+
+    @if(JuegosEnOferta.length==0){
+    <h2>No hay Juegos en ofertas</h2>
+    }@else{
+    @for(p of JuegosEnOferta ; track p.id){
+    <div class="card" style="width: 18rem;">
+        <div class="p-6">
+            <img src="{{ p.img }}" class="card-image-top" alt="{{ p.alt }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ p.nombre }}</h5>
+                <p class="card-text">${{ p.precio }}</p>
+                <!-- <button type="button" class="btn btn-action" data-bs-toggle="modal">Ver mas</button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="eliminar(p.id)">Quitar de
+                    favoritos</button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarAcarrito(p)">Agregar
+                    al carrito</button> -->
+            </div>
+        </div>
+
+
+    </div>
+    }
+    }
+
+
+</div>

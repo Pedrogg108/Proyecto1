@@ -27,9 +27,62 @@
             <div class="card-body">
                 <h5 class="card-title">{{ p.nombre }}</h5>
                 <p class="card-text">${{ p.precio }}</p>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal">Ver mas</button>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarFavoritos(p)">Favorito</button>
-                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarAcarrito(p)">Agregar al carrito</button>
+                <button type="button" class="btn btn-action" data-bs-toggle="modal"
+                    [attr.data-bs-target]="'#modal' + p.id">Ver mas</button>
+                @if(p.favorito){
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="quitarFavoritos(p)"><i
+                        class="bi bi-heart-fill"></i> Quitar de Favoritos</button>
+                }@else{
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarFavoritos(p)"><i
+                        class="bi bi-heart"></i> Añadir a Favoritos</button>
+                }
+                <button type="button" class="btn btn-action" data-bs-toggle="modal" (click)="agregarAcarrito(p)"><i
+                        class="bi bi-cart-plus"></i> Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="modal{{p.id}}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2 class="modal-title">{{p.nombre}}</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="modal-imagen">
+                        <img src="{{p.img}}" alt="{{p.alt}}" class="img-modal">
+                    </div>
+                    <div class="modal-info">
+                        <span class="badge-genero">
+                            {{p.genero}}
+                        </span>
+                        <p class="modal-descripcion">
+                            {{p.descripcion}}
+                        </p>
+                        <div class="modal-precio">
+                            ${{p.precio}}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+                    
+                    <button type="button" class="btn btn-action" (click)="agregarAcarrito(p)">
+                        <i class="bi bi-cart-plus"></i> 
+                        Agregar al carrito
+                    </button>
+                </div>
+
             </div>
         </div>
     </div>

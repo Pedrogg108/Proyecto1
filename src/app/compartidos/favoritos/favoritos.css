@@ -1,47 +1,41 @@
 /* Título Principal */
 #titulo {
     text-align: center;
-    text-transform: uppercase;
     letter-spacing: 4px;
-    color: #38bdf8;
-    background-color: #52796f;
-    /* Celeste neón */
+    color: #cad2c5;
+    background-color: #3d4e5a;
     text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-    margin-bottom: 40px;
-    margin: 0px;
-    padding-top: 15px;
+    margin: 0;
+    padding: 15px 10px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
 }
 
-/* Contenedor de las Tarjetas (Grid) */
-/* .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    justify-items: center;
-    padding: 20px;
-} */
-
+/* Grid de tarjetas */
 .fondo {
     padding: 20px;
     gap: 25px;
-    display: grid;
-    background-color: #52796f;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    align-items: center;
+    display: flex;
+    background-color: #3d4e5a;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: stretch;
     justify-items: center;
-
 }
 
+/* Texto cuando no hay contenido */
 .text {
-    color: #113d50;
-    justify-items: center;
-    background-color: #52796f;
-    /* Celeste neón */
+    color: #a1c3d1;
+    text-align: center;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    background-color: #3d4e5a;
     text-shadow: 0 0 10px rgba(14, 63, 85, 0.5);
+    font-size: clamp(1.2rem, 3vw, 2rem);
 }
 
-/* Estilo de la Tarjeta */
+/* Tarjeta */
 .card {
+    width: 100%;
+    max-width: 350px;
     background: #1e293b;
     border: 1px solid #334155;
     border-radius: 15px;
@@ -53,25 +47,27 @@
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.3);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(56, 189, 248, 0.3);
     border-color: #38bdf8;
 }
 
-/* Imagen del Videojuego */
+/* Imagen */
 .card-image-top {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    /* Ajusta la imagen sin deformarla */
     border-bottom: 2px solid #334155;
 }
 
-/* Cuerpo de la Tarjeta */
+/* Cuerpo */
 .card-body {
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex-grow: 1;
 }
 
 .card-title {
@@ -88,7 +84,7 @@
     min-height: 50px;
 }
 
-/* Botón de Compra */
+/* Botón */
 .btn-action {
     background-color: #38bdf8;
     color: #0f172a;
@@ -100,10 +96,336 @@
     text-transform: uppercase;
     transition: background 0.2s ease;
     margin-top: auto;
-    /* Empuja el botón al fondo si hay poco texto */
 }
 
 .btn-action:hover {
     background-color: #7dd3fc;
     box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+}
+/* ===== Modal ===== */
+
+.modal-dialog {
+    max-width: 850px;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+/* Header */
+
+.modal-header {
+    background: #3d4e5a;
+    color: white;
+    border: none;
+    padding: 20px 25px;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+/* Body */
+
+.modal-body {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+}
+
+.modal-imagen {
+    flex: 1;
+}
+
+.img-modal {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.modal-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.badge-genero {
+    align-self: flex-start;
+    background: #3d4e5a;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.modal-descripcion {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.modal-precio {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #16a34a;
+}
+/* Footer */
+
+.modal-footer {
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
+
+.modal-footer .btn-action {
+    background: #3d4e5a;
+    color: white;
+    border: none;
+}
+
+.modal-footer .btn-action:hover {
+    background: #2d3a43;
+}
+
+/* ===== Modal Responsive ===== */
+
+@media (max-width: 768px) {
+
+    .modal-dialog {
+        max-width: 95%;
+        margin: 1rem auto;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .modal-imagen {
+        width: 100%;
+    }
+
+    .img-modal {
+        max-width: 280px;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .modal-info {
+        width: 100%;
+        align-items: center;
+    }
+
+    .badge-genero {
+        align-self: center;
+    }
+
+    .modal-title {
+        font-size: 1.3rem;
+    }
+
+    .modal-descripcion {
+        font-size: 0.95rem;
+    }
+
+    .modal-precio {
+        font-size: 1.7rem;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-footer button {
+        width: 100%;
+    }
+}
+
+/* Celulares pequeños */
+
+@media (max-width: 480px) {
+
+    .modal-dialog {
+        max-width: 98%;
+        margin: .5rem auto;
+    }
+
+    .modal-content {
+        border-radius: 15px;
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-size: 1.1rem;
+    }
+
+    .modal-body {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .img-modal {
+        max-width: 220px;
+    }
+
+    .modal-descripcion {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .modal-precio {
+        font-size: 1.5rem;
+    }
+
+    .badge-genero {
+        font-size: .75rem;
+        padding: 6px 12px;
+    }
+
+    .modal-footer {
+        padding: 15px;
+    }
+
+    .modal-footer button {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================
+   TABLETS
+   ========================== */
+@media (max-width: 992px) {
+
+    .fondo {
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .card {
+        max-width: 320px;
+    }
+
+    .card-image-top {
+        height: 200px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+}
+
+/* ==========================
+   CELULARES
+   ========================== */
+@media (max-width: 768px) {
+
+    #titulo {
+        letter-spacing: 2px;
+        padding: 12px 8px;
+    }
+
+    .fondo {
+        padding: 12px;
+        gap: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card-image-top {
+        height: 180px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.85rem;
+        min-height: auto;
+    }
+
+    .btn-action {
+        padding: 12px;
+    }
+
+    .text {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+/* ==========================
+   CELULARES PEQUEÑOS
+   ========================== */
+@media (max-width: 480px) {
+
+    #titulo {
+        letter-spacing: 1px;
+    }
+
+    .fondo {
+        padding: 10px;
+    }
+
+    .card-image-top {
+        height: 160px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+    }
+
+    .btn-action {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .text {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        font-size: 1rem;
+    }
 }

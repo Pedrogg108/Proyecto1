@@ -3,31 +3,28 @@
     min-height: 100vh;
     margin: 0;
     display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    background-color: #52796f;
+    align-items: center;
+    justify-content: center;
+    background-color: #3d4e5a;
     padding: 20px;
     box-sizing: border-box;
 }
 
+/* Formulario */
 form {
     width: 100%;
-    /* Aumentamos el ancho máximo de 400px a 450px o 500px */
-    max-width: 480px; 
-    
-    /* Aumentamos mucho el padding para que el contenido no esté pegado a los bordes */
-    padding: 3rem; 
-    
+    max-width: 480px;
+    padding: 3rem;
     background-color: #ffffff;
-    border-radius: 20px; /* Bordes más redondeados para un look moderno */
+    border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* Título más grande */
+/* Título */
 #titulo {
     text-align: center;
-    font-size: 2rem; /* Tamaño de fuente mayor */
+    font-size: clamp(1.8rem, 4vw, 2rem);
     font-weight: 700;
     color: #333;
     margin-bottom: 2.5rem;
@@ -38,7 +35,7 @@ form {
     margin-bottom: 1.8rem;
 }
 
-/* Etiquetas más legibles */
+/* Labels */
 .form-label {
     font-size: 1.1rem;
     font-weight: 600;
@@ -46,14 +43,15 @@ form {
     margin-bottom: 0.8rem;
 }
 
-/* Inputs más altos y con letra más grande */
+/* Inputs */
 .form-control {
     width: 100%;
-    padding: 1rem; /* Más espacio para escribir */
+    padding: 1rem;
     font-size: 1.05rem;
     border: 2px solid #e0e0e0;
     border-radius: 12px;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-control:focus {
@@ -62,7 +60,7 @@ form {
     outline: none;
 }
 
-/* Checkbox y su etiqueta */
+/* Checkbox */
 .form-check {
     display: flex;
     align-items: center;
@@ -71,7 +69,7 @@ form {
 }
 
 .form-check-input {
-    width: 20px; /* Checkbox más grande */
+    width: 20px;
     height: 20px;
     cursor: pointer;
 }
@@ -79,18 +77,19 @@ form {
 .form-check-label {
     font-size: 1rem;
     cursor: pointer;
+    color: black;
 }
 
-/* Botón grande y llamativo */
+/* Botón */
 .btn-primary {
     width: 100%;
     padding: 1rem;
-    font-size: 1.2rem; /* Letra grande */
+    font-size: 1.2rem;
     font-weight: 700;
-    text-transform: uppercase; /* Estilo profesional */
+    text-transform: uppercase;
     letter-spacing: 1px;
     color: white;
-    background-color: #2f3e46; /* Color oscuro elegante */
+    background-color: #2f3e46;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -101,4 +100,105 @@ form {
     background-color: #354f52;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ==========================
+   TABLETS
+   ========================== */
+@media (max-width: 768px) {
+
+    .fondo {
+        padding: 15px;
+    }
+
+    form {
+        padding: 2rem;
+    }
+
+    #titulo {
+        margin-bottom: 2rem;
+    }
+
+    .form-label {
+        font-size: 1rem;
+    }
+
+    .form-control {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==========================
+   CELULARES
+   ========================== */
+@media (max-width: 480px) {
+
+    .fondo {
+        padding: 10px;
+    }
+
+    form {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    #titulo {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .mb-3 {
+        margin-bottom: 1.2rem;
+    }
+
+    .form-label {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .form-check-label {
+        font-size: 0.9rem;
+    }
+
+    .form-check-input {
+        width: 18px;
+        height: 18px;
+    }
+
+    .btn-primary {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+}
+
+/* ==========================
+   CELULARES MUY PEQUEÑOS
+   ========================== */
+@media (max-width: 320px) {
+
+    form {
+        padding: 1rem;
+    }
+
+    #titulo {
+        font-size: 1.4rem;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        font-size: 0.9rem;
+    }
 }

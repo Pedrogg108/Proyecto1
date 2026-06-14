@@ -35,6 +35,11 @@ export class Carrito implements OnInit {
     this.juegosEnCarrito = this.carritoServicio.obtenerJuego();
     this.calcularTotal();
   }
+  eliminarTodo(){
+    this.carritoServicio.eliminarTodo();
+    this.juegosEnCarrito=this.carritoServicio.obtenerJuego()
+
+  }
   calcularTotal() {
     this.carritoServicio.calcularTotal();
     this.total = this.carritoServicio.total;

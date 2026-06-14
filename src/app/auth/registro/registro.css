@@ -3,7 +3,7 @@
     min-height: 100%; 
     margin: 0;
     padding: 40px 20px; /* Más padding arriba y abajo para que no toque los bordes del navegador */
-    background-color: #52796f;
+    background-color: #3d4e5a;
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -69,7 +69,11 @@ form {
     margin-top: 10px;
     margin-bottom: 30px; /* Separamos el checkbox del botón de registro */
 }
-
+.form-check-label{
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+}
 /* Botón de Enviar */
 .btn-primary {
     width: 100%;

@@ -17,11 +17,12 @@ export class CarritoService {
 
     }
     else {
-      this.carrito.push({...p, cantidad: 1});
+      this.carrito.push({ ...p, cantidad: 1 });
     }
+    this.calcularTotal()
   }
 
-   calcularTotal() {
+  calcularTotal() {
     this.total = 0;
     this.carrito.forEach(juego => {
       this.total += juego.precio * juego.cantidad;
@@ -49,6 +50,11 @@ export class CarritoService {
   eliminarJuego(id: number) {
     this.carrito = this.carrito.filter(p => p.id !== id);
     this.calcularTotal();
+  }
+
+  eliminarTodo() {
+   this.carrito=[]
+    this.calcularTotal()
   }
   total: number = 0;
 }

@@ -1,34 +1,50 @@
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Precio unitario</th>
-            <th scope="col">Agregar</th>
-            <th scope="col">Eliminar</th>
-            <th scope="col">Eliminar del carrito</th>
-            <th scope="col">Subtotal</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (p of juegosEnCarrito ; track p.id){
-        @if(p.disponibilidad){
-        <tr>
-            <td>{{ p.nombre }}</td>
-            <td>{{ p.cantidad }}</td>
-            <td>${{ p.precio }}</td>
-            <td><button (click)="aumentarCantidad(p.id)">+</button></td>
-            <td><button (click)="disminuirCantidad(p.id)">-</button></td>
-            <td><button (click)="eliminarJuego(p.id)">X</button></td>
-            <td>${{p.precio * p.cantidad}}</td>
-        </tr>
+<h1 class="titulo">Carrito de compras</h1>
 
-        }}
-
-    </tbody>
-
-</table>
-<div class="finalizar">
-    <h2>Total: ${{total}}</h2>
-    <button class="btn btn-action">Finalizar compra</button>
+@if(juegosEnCarrito.length==0){
+<div class="text">
+    <h2>No hay juegos en el carrito</h2>
 </div>
+
+}@else{
+<div class="fondo">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio unitario</th>
+                <th scope="col">Agregar</th>
+                <th scope="col">Eliminar</th>
+                <th scope="col">Eliminar del carrito</th>
+                <th scope="col">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (p of juegosEnCarrito ; track p.id){
+            @if(p.disponibilidad){
+            <tr>
+                <td>{{ p.nombre }}</td>
+                <td>{{ p.cantidad }}</td>
+                <td>${{ p.precio }}</td>
+                <td><button (click)="aumentarCantidad(p.id)">+</button></td>
+                <td><button (click)="disminuirCantidad(p.id)">-</button></td>
+                <td><button (click)="eliminarJuego(p.id)">X</button></td>
+                <td>${{p.precio * p.cantidad}}</td>
+            </tr>
+
+            }}
+
+        </tbody>
+
+    </table>
+    <div class="finalizar">
+        <h2>Total: ${{total}}</h2>
+        <div class="botones">
+            <button class="btn btn-danger " (click)="eliminarTodo()">Borrar todos los Articulos</button>
+            <button class="btn btn-primary">Finalizar compra</button>
+        </div>
+
+    </div>
+</div>
+}
+<!-- MODALLLLLLLLLLLLLL FINALIZAR COMPRA-->

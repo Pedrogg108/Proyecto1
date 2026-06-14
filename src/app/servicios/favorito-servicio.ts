@@ -8,12 +8,9 @@ export class FavoritoServicio {
   favoritos: Juegos[] = [];
   agregarJuego(p: Juegos) {
     const juegoExistente = this.favoritos.find(juego => juego.id === p.id);
-    if (juegoExistente) {
-      juegoExistente.cantidad++;
-
-    }
-    else {
-      this.favoritos.push({...p, cantidad: 1});
+    if (!juegoExistente) {
+      this.favoritos.push(p);
+      p.favorito=true
     }
   }
 
@@ -22,6 +19,7 @@ export class FavoritoServicio {
   }
   aumentarJuego(id: number) {
     const juego = this.favoritos.find(p => p.id === id);
+    
     if (juego) {
       juego.cantidad++
       //lectura va en la interface
