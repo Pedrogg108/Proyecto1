@@ -10,7 +10,8 @@ export class FavoritoServicio {
     const juegoExistente = this.favoritos.find(juego => juego.id === p.id);
     if (!juegoExistente) {
       this.favoritos.push(p);
-      p.favorito=true
+    } else {
+      alert('El juego ya está en favoritos');
     }
   }
 
@@ -22,10 +23,11 @@ export class FavoritoServicio {
     
     if (juego) {
       juego.cantidad++
-      //lectura va en la interface
+      
     }
   }
   quitarDeFavoritos(id: number) {
     this.favoritos = this.favoritos.filter(p => p.id !== id);
+    
   }
 }

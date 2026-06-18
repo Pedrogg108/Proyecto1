@@ -7,6 +7,7 @@ import { Productos } from './paginas/productos/productos';
 import { InicioSesion } from './auth/inicio-sesion/inicio-sesion';
 import { Registro } from './auth/registro/registro';
 import { Inicio } from './paginas/inicio/inicio';
+import { Comprar } from './auth/comprar/comprar';
 
 export const routes: Routes = [
     {path: '',redirectTo:'inicio',pathMatch:'full'},
@@ -18,5 +19,6 @@ export const routes: Routes = [
     {path:'contacto',component:Contacto},
     {path:'ofertas',component:Ofertas},
     {path:'productos',component:Productos},
+    {path:'comprar',component:Comprar},
     {path:'**',redirectTo:'inicio'},
 ];
