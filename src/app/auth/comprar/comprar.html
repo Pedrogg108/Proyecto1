@@ -1,28 +1,37 @@
-<p>comprar works!</p>
 <div class="fondo">
-<form>
-  <h1 id="titulo">Registrarse</h1>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Ingrese su nombre de usuario</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre de Usuario">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="CorreoElectronico@gmail.com" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">Nunca compatiremos su correo con terceros.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña123">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Confirme su contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"  placeholder="">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Acepto los terminos de privacidad</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Registrase</button>
-</form>
+  <form>
+    <h1 id="titulo">Metodo de Pago</h1>
+    <div class="mb-3">
+      <label for="numeroTarjeta" class="form-label">Número de Tarjeta</label>
+      <input type="number" class="form-control" id="numeroTarjeta">
+    </div>
+
+    <div class="mb-3">
+      <div>Información de facturación</div>
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre">
+    </div>
+
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="apellido">
+    </div>
+
+    <div class="mb-3">
+      <label for="direccionFacturacion" class="form-label">Dirección de facturación</label>
+      <input type="text" class="form-control" id="direccionFacturacion">
+    </div>
+
+    <div class="mb-3">
+      <label for="pais" class="form-label">País</label>
+      <input type="text" class="form-control" id="pais">
+    </div>
+
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="tel" class="form-control" id="telefono">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Continuar</button>
+  </form>
 </div>

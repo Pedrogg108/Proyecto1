@@ -1,0 +1,93 @@
+/* Fondo general */
+.fondo {
+    min-height: 100vh;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Título */
+#titulo {
+    text-align: center;
+    background-color: #3d4e5a;
+    color: #cad2c5;
+    margin-top:20px ;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    
+}
+
+/* Carousel */
+#carouselExampleCaptions {
+    width: 90%;
+    max-width: 1100px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Imágenes */
+.carousel-item img {
+    height: 600px;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: transform 0.5s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.03);
+}
+
+/* Texto sobre las imágenes */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 15px;
+    border-radius: 12px;
+    bottom: 30px;
+}
+
+.carousel-caption h5 {
+    color: #cad2c5;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* Botones laterales */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+}
+
+/* Indicadores */
+.carousel-indicators button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #titulo {
+        font-size: 1.8rem;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}

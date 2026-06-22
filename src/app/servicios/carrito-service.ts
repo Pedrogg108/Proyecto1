@@ -10,14 +10,14 @@ export class CarritoService {
   // ProductosGuardados=signal<Productos[]>([
 
   // ])
-  agregarJuego(p: Juegos) {
+  agregarJuego(p: Juegos) { //CREATE
     const juegoExistente = this.carrito.find(juego => juego.id === p.id);
     if (juegoExistente) {
       juegoExistente.cantidad++;
 
     }
     else {
-      this.carrito.push({ ...p, cantidad: 1 });
+      this.carrito.push({ ...p });
     }
     this.calcularTotal()
   }
@@ -27,32 +27,33 @@ export class CarritoService {
     this.carrito.forEach(juego => {
       this.total += juego.precio * juego.cantidad;
     })
+   
   }
 
-  obtenerJuego() {
+  obtenerJuego() {//READ
     return this.carrito;
   }
-  aumentarJuego(id: number) {
+  aumentarJuego(id: number) {//UPDATE
     const juego = this.carrito.find(p => p.id === id);
     if (juego) {
       juego.cantidad++
-      //lectura va en la interface
+      
     }
     this.calcularTotal();
   }
-  disminuirCantidad(id: number) {
+  disminuirCantidad(id: number) {//UPDATE
     const juego = this.carrito.find(p => p.id === id);
     if (juego && juego.cantidad > 1) {
       juego.cantidad--;
     }
     this.calcularTotal();
   }
-  eliminarJuego(id: number) {
+  eliminarJuego(id: number) {//DELETE 
     this.carrito = this.carrito.filter(p => p.id !== id);
     this.calcularTotal();
   }
 
-  eliminarTodo() {
+  eliminarTodo() {//DELETE
    this.carrito=[]
     this.calcularTotal()
   }

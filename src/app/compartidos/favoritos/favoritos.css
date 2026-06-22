@@ -76,10 +76,9 @@
     color: #f1f5f9;
     margin: 0;
 }
-
 .card-text {
-    font-size: 0.9rem;
-    color: #94a3b8;
+    font-size: 1.25rem;
+    color: #21c051;
     line-height: 1.4;
     min-height: 50px;
 }

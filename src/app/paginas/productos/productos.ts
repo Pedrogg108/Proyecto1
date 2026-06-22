@@ -3,7 +3,6 @@ import { Juegos } from '../../models/juegos';
 import { CommonModule } from '@angular/common';
 import { CarritoService } from '../../servicios/carrito-service';
 import { FavoritoServicio } from '../../servicios/favorito-servicio';
-import { OfertasServicio } from '../../servicios/ofertas-servicio';
 @Component({
   selector: 'app-productos',
   imports: [CommonModule],
@@ -11,8 +10,9 @@ import { OfertasServicio } from '../../servicios/ofertas-servicio';
   styleUrl: './productos.css',
 })
 
-export class Productos {
-  constructor(private carritoServicio: CarritoService, private favoritoServicio: FavoritoServicio, private OfertasServicio: OfertasServicio) { }
+export class Productos {//se inyecta un instancia de los servicios
+  constructor(private carritoServicio: CarritoService, private favoritoServicio: FavoritoServicio) { }//El constructor recibe el servicio. Angular lo crea automáticamente.
+
   // metodoAgregarAFavoritos(juego: Juegos) {
   //   this.svc.agregarFavorito(juego);
   // }
@@ -25,9 +25,6 @@ export class Productos {
       precio: 70,
       genero: "Pelea",
       disponibilidad: true,
-      favorito: false,
-      oferta: false,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/DBZ.jpg",
       alt: "DBZ"
@@ -39,9 +36,6 @@ export class Productos {
       precio: 60,
       genero: "Terror",
       disponibilidad: true,
-      favorito: false,
-      oferta: true,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/ReRequiem.jpg",
       alt: "RERequiem"
@@ -53,9 +47,6 @@ export class Productos {
       precio: 50,
       genero: "Accion",
       disponibilidad: true,
-      favorito: false,
-      oferta: false,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/monsterHunterWorld.jpg",
       alt: "MonsterHunterWorld"
@@ -67,9 +58,6 @@ export class Productos {
       precio: 49,
       genero: "Terror",
       disponibilidad: true,
-      favorito: false,
-      oferta: false,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/silentHill2.jpg",
       alt: "Silent Hill 2 remake"
@@ -81,9 +69,6 @@ export class Productos {
       precio: 67,
       genero: "Accion",
       disponibilidad: true,
-      favorito: false,
-      oferta: false,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/expedition.jpg",
       alt: "Expedition33"
@@ -95,9 +80,6 @@ export class Productos {
       precio: 39,
       genero: "Carrera",
       disponibilidad: false,
-      favorito: false,
-      oferta: true,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/forzahorizon6.jpg",
       alt: "Forza horizon 6"
@@ -109,9 +91,6 @@ export class Productos {
       precio: 70,
       genero: "Horror",
       disponibilidad: true,
-      favorito: false,
-      oferta: false,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/ReVeronica.png",
       alt: "Resident Evil Veronica"
@@ -123,9 +102,6 @@ export class Productos {
       precio: 90,
       genero: "Acción",
       disponibilidad: true,
-      favorito: false,
-      oferta: false,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/GOWremake.jpg",
       alt: "Gow Of War Trilogy Remake"
@@ -137,9 +113,6 @@ export class Productos {
       precio: 40,
       genero: "Acción",
       disponibilidad: true,
-      favorito: false,
-      oferta: true,
-      descuento: 0,
       cantidad: 1,
       img: "../assets/Tlou2.jpg",
       alt: "The last of us II"
@@ -151,13 +124,6 @@ export class Productos {
   agregarFavoritos(p: Juegos) {
     this.favoritoServicio.agregarJuego(p);
 
-  }
-  agregarOfertas(p: Juegos) {
-    this.OfertasServicio.agregarJuego(p);
-  }
-  quitarFavoritos(p: Juegos) {
-    this.favoritoServicio.quitarDeFavoritos(p.id)
-    p.favorito = false
   }
 }
 

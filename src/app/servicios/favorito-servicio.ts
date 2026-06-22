@@ -18,14 +18,14 @@ export class FavoritoServicio {
   obtenerJuego() {
     return this.favoritos;
   }
-  aumentarJuego(id: number) {
-    const juego = this.favoritos.find(p => p.id === id);
+  // aumentarJuego(id: number) {
+  //   const juego = this.favoritos.find(p => p.id === id);
     
-    if (juego) {
-      juego.cantidad++
+  //   if (juego) {
+  //     juego.cantidad++
       
-    }
-  }
+  //   }
+  // }
   quitarDeFavoritos(id: number) {
     this.favoritos = this.favoritos.filter(p => p.id !== id);
     

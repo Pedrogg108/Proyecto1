@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             @for (p of juegosEnCarrito ; track p.id){
-            @if(p.disponibilidad){
+
             <tr>
                 <td>{{ p.nombre }}</td>
                 <td>{{ p.cantidad }}</td>
@@ -32,7 +32,7 @@
                 <td>${{p.precio * p.cantidad}}</td>
             </tr>
 
-            }}
+            }
 
         </tbody>
 
@@ -47,4 +47,3 @@
     </div>
 </div>
 }
-<!-- MODALLLLLLLLLLLLLL FINALIZAR COMPRA-->

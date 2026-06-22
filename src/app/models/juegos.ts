@@ -5,9 +5,6 @@ export interface Juegos {
     precio:number;
     genero:string;
     disponibilidad:boolean;
-    favorito:boolean;
-    oferta?:boolean;
-    descuento:number;
     cantidad:number;
     img?:string;
     alt?:string;

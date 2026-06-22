@@ -12,7 +12,7 @@ import { Juegos } from '../../models/juegos';
 export class Carrito implements OnInit {
   juegosEnCarrito: Juegos[] = [];
   constructor(private carritoServicio: CarritoService) { }
-  ngOnInit() {
+  ngOnInit() {//Se ejecuta automáticamente cuando se carga el componente.
     this.juegosEnCarrito = this.carritoServicio.obtenerJuego();
     this.calcularTotal();
   }
